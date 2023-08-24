@@ -1,2 +1,2 @@
-# specgen
-A software suite to generate artificial spectra.
+# SpecGen
+Specgen is designed as a python package that is able to generate aritificial spectra mocking QSO sightlines. For the generation of the spectrum itself, it is inevitable to provide information about physical parameters like the radial velocity of the gas, the gas temperature, pressure, as well as some quantum mechanical information. The plan is include many convenient ways to access them easily for the program. Let it be raw simulation data that is being fed into it, the different geometries etc. Since the code will be quite calculation-intense, it is important to vectorize as much as possible! - So part of the optimization will also focus on parallelizing the code. It would be also cool to combine our program with the power of external programs like CLOUDY or other software that are capable of modeling the physical condition in the absorbing systems that we see.
