@@ -1,0 +1,64 @@
+# This is the configuration file with some standard settings.
+# Each subpackage has its own section here.
+
+[decomp] 
+# default initial range values for the simple gaussian absorber fit
+simpleGaussian.init_ranges.v_r_lower        = -300.0 # km s^-1
+simpleGaussian.init_ranges.v_r_upper        = 300.0  # km s^-1
+simpleGaussian.init_ranges.log_tau_max_lower= -2.0   # unitless quantity
+simpleGaussian.init_ranges.log_tau_max_upper= 2.0    # unitless quantity
+simpleGaussian.init_ranges.width_lower      = 5.0    # km s^-1
+simpleGaussian.init_ranges.width_upper      = 20.0   # km s^-1
+
+cornerplot.smoothing_kernel_width           = 2.0    # a percentage of the total image. This value determines the width of the gaussian smoothing kernel
+cornerplot.contours.log_min                 = -2.0   # the log10 value of the minimum contour. This is given in percent of the maximum value in the contour plot. This value must be negative and strictly smaller than cornerplot.contours.log_max
+cornerplot.contours.log_max                 = 0.0    # the log10 value of the minimum contour. This is given in percent of the maximum value in the contour plot. This value must be negative or equal to 0 but strictly larger than cornerplot.contours.log_min
+cornerplot.contours.Nlevels                 = 10     # how many levels to plot in the contour plot.
+
+[tools]
+histfit.default_peak_finder_width           = 100
+histfit.default_hist_peak_finder_percentile = 5
+histfit.default_npoints_per_bin             = 0.1
+
+[equiv_width]
+
+[HI4PI]
+dir = '' # the directory in which the HI4PIdata is stored
+
+[plotting]
+fontsize.small                              = 8
+fontsize.medium                             = 10
+fontsize.large                              = 12
+
+[projections]
+
+[init_sightlines]
+init.dir_path                               = '/home/libra/fruenger/Documents/Uni/phd/cos_data_archive/data/'
+init.bin_file_name                          = '/home/libra/fruenger/Documents/Uni/phd/cos_data_archive/data/cos_data.npz'
+init.ascii_path                             = '/home/pollux/mitzerott/2023/Philipp_Project/ASCII/'
+init.archive_path                           = '/home/libra/fruenger/Documents/Uni/phd/cos_data_archive/COS_archive.dat'
+init.bin_file_target_path                   = '.'
+
+[specgen]
+cog.integration_range_factor                 = 1e-3 # in order to obtain the equivalent width of a line with a-priori unknown strength, will be integrate
+cog.integration_resolution                   = 1e-2 # wavelength sampling in Angstrom
+
+[lines]#F from NIST or Philipps Paper
+lines.transitions                            = [
+                                                    {Line = 'SiIV',     Lambda = 1393.76,   F = 0.5130},
+                                                    {Line = 'SiIV',     Lambda = 1402.77,   F = 0.2550}, 
+                                                    {Line = 'SiIII',    Lambda = 1206.50,   F = 1.6690},
+                                                    {Line = 'SiII',     Lambda = 1190.42,   F = 0.2502}, 
+                                                    {Line = 'SiII',     Lambda = 1193.29,   F = 0.4991},
+                                                    {Line = 'SiII',     Lambda = 1260.42,   F = 1.0070}, 
+#                                                   {Line = 'SiII',     Lambda = 1304.37,   F = 0.1473},
+                                                    {Line = 'SiII',     Lambda = 1526.71,   F = 0.2303},
+                                                    {Line = 'CII',      Lambda = 1334.53,   F = 0.1278}, 
+                                                    {Line = 'CIV',      Lambda = 1548.19,   F = 0.1908}, 
+                                                    {Line = 'CIV',      Lambda = 1550.77,   F = 0.0952}
+                                                ]
+
+[instruments]
+instruments.parameters                       = [
+                                                    {Name = 'HSTCOS',   Grating = 'G130M',  Resolution_Power = 17000}
+                                                ]
