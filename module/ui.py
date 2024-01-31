@@ -66,17 +66,17 @@ class Formatter():
         """
         Initialize the Formatter class with ANSI escape codes for text formatting.
         """
-        self.reset    = "\033[0m"
-        self.inv      = "\033[7m"
-        self.rinv     = "\033[27m"
-        self.bold     = "\033[1m"
-        self.rbold    = "\033[22m"
-        self.blink    = "\033[5m"
-        self.rblink    = "\033[25m"
+        self.reset    = "\u001b[0m"
+        self.inv      = "\u001b[7m"
+        self.rinv     = "\u001b[27m"
+        self.bold     = "\u001b[1m"
+        self.rbold    = "\u001b[22m"
+        self.blink    = "\u001b[5m"
+        self.rblink    = "\u001b[25m"
 
-        self.inf      = "\033[38;2;175;175;175m\033[1m"
-        self.warning  = "\033[38;2;255;255;0m\033[1m"
-        self.error    = "\033[38;2;255;50;50m\033[1m"
+        self.inf      = "\u001b[38;2;175;175;175m\u001b[1m"
+        self.warning  = "\u001b[38;2;255;255;0m\u001b[1m"
+        self.error    = "\u001b[38;2;255;50;50m\u001b[1m"
 
 
     def warn(self, *messages):
