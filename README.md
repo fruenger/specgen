@@ -1,1 +1,3 @@
 # ML High-Velocity Halo Cloud Playground
+
+This is a test to let COle know where he can expect some more frequent updates...
